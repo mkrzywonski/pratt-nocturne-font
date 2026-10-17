@@ -4,15 +4,16 @@ An expressive handwriting-inspired display family with suspended letter heads, d
 
 This font was inspired by the unique handwriting in a letter I received many years ago. I liked the odd style so much that I created this font in order to preserve it. I hope you enjoy Pratt-Nocturne.
 
-**Version 2.000 · Regular · Bold · Oblique · Bold Oblique**
+**Version 2.001 · Regular · Bold · Oblique · Bold Oblique**
 
-![Four styles and sample characters](specimens/Release-2.000.png)
+![Four styles and sample characters](specimens/Release-2.001.png)
 
 ## Fonts and proofs
 
 - [Font files](fonts/): TTF and OTF for desktop use; WOFF2 for websites.
 - [Complete character and exemplar proof](specimens/Complete-Exemplar-Proof.pdf): all 426 encoded characters and 49 additional glyphs, in all four styles, with isolated handwritten exemplars where available.
-- [Family proof](specimens/Release-2.000.pdf): style comparison and character inventory.
+- [b/d serif detail](specimens/Stem-Details.pdf): the mirrored stem details and inherited d forms.
+- [Family proof](specimens/Release-2.001.pdf): style comparison and character inventory.
 - [Interactive specimen](specimens/Try-Pratt-Nocturne.html): download the repository and open this file locally.
 - [Exact character inventory](CHARACTER-SET.txt) and [validation results](VALIDATION.txt).
 

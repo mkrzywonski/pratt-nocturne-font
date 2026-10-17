@@ -190,7 +190,7 @@ feature mark {
 pos base uni0061 <anchor 186 456> mark @MC_above <anchor 186 -361> mark @MC_below <anchor 366 286> mark @MC_side;
 pos base uni0062 <anchor 207 687> mark @MC_above <anchor 207 -44> mark @MC_below <anchor 447 517> mark @MC_side;
 pos base uni0063 <anchor 210 455> mark @MC_above <anchor 210 -62> mark @MC_below <anchor 417 285> mark @MC_side;
-pos base uni0064 <anchor 220 687> mark @MC_above <anchor 220 -60> mark @MC_below <anchor 437 517> mark @MC_side;
+pos base uni0064 <anchor 266 700> mark @MC_above <anchor 266 -61> mark @MC_below <anchor 528 530> mark @MC_side;
 pos base uni0065 <anchor 185 460> mark @MC_above <anchor 185 -270> mark @MC_below <anchor 389 290> mark @MC_side;
 pos base uni0066 <anchor 177 685> mark @MC_above <anchor 177 -206> mark @MC_below <anchor 375 515> mark @MC_side;
 pos base uni0067 <anchor 253 446> mark @MC_above <anchor 253 -411> mark @MC_below <anchor 466 276> mark @MC_side;
@@ -331,7 +331,7 @@ pos base uni00FE <anchor 230 689> mark @MC_above <anchor 230 -354> mark @MC_belo
 pos base uni0126 <anchor 302 795> mark @MC_above <anchor 302 -68> mark @MC_below <anchor 627 625> mark @MC_side;
 pos base uni0127 <anchor 199 684> mark @MC_above <anchor 199 -54> mark @MC_below <anchor 434 514> mark @MC_side;
 pos base uni0110 <anchor 305 812> mark @MC_above <anchor 305 -182> mark @MC_below <anchor 619 642> mark @MC_side;
-pos base uni0111 <anchor 255 687> mark @MC_above <anchor 255 -60> mark @MC_below <anchor 507 517> mark @MC_side;
+pos base uni0111 <anchor 266 700> mark @MC_above <anchor 266 -61> mark @MC_below <anchor 528 530> mark @MC_side;
 pos base uni0141 <anchor 233 791> mark @MC_above <anchor 233 -56> mark @MC_below <anchor 493 621> mark @MC_side;
 pos base uni0142 <anchor 148 686> mark @MC_above <anchor 148 -58> mark @MC_below <anchor 330 516> mark @MC_side;
 pos base uni0166 <anchor 273 799> mark @MC_above <anchor 273 -64> mark @MC_below <anchor 563 629> mark @MC_side;
@@ -571,7 +571,7 @@ pos base uni010B <anchor 210 634> mark @MC_above <anchor 210 -62> mark @MC_below
 pos base uni010C <anchor 288 1009> mark @MC_above <anchor 288 -56> mark @MC_below <anchor 571 839> mark @MC_side;
 pos base uni010D <anchor 210 690> mark @MC_above <anchor 210 -62> mark @MC_below <anchor 417 520> mark @MC_side;
 pos base uni010E <anchor 305 1046> mark @MC_above <anchor 305 -182> mark @MC_below <anchor 619 876> mark @MC_side;
-pos base uni010F <anchor 281 688> mark @MC_above <anchor 281 -60> mark @MC_below <anchor 557 518> mark @MC_side;
+pos base uni010F <anchor 326 701> mark @MC_above <anchor 326 -61> mark @MC_below <anchor 648 531> mark @MC_side;
 pos base uni0112 <anchor 278 957> mark @MC_above <anchor 278 -57> mark @MC_below <anchor 526 787> mark @MC_side;
 pos base uni0113 <anchor 186 630> mark @MC_above <anchor 186 -270> mark @MC_below <anchor 392 460> mark @MC_side;
 pos base uni0114 <anchor 278 1017> mark @MC_above <anchor 278 -57> mark @MC_below <anchor 526 847> mark @MC_side;

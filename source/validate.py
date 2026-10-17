@@ -15,7 +15,7 @@ for p in sorted(p for p in (ROOT/'fonts').iterdir() if p.suffix in {'.ttf','.otf
  for n in f.getGlyphOrder():
   pen=BoundsPen(gs);gs[n].draw(pen)
   if pen.bounds:assert pen.bounds[1]>=-620 and pen.bounds[3]<=1180,(p,n,pen.bounds)
- assert abs(f['head'].fontRevision-2)<.001
+ assert abs(f['head'].fontRevision-2.001)<.0001
  oblique='Oblique' in p.name;bold='Bold' in p.name
  assert f['head'].macStyle==int(bold)+2*int(oblique)
  assert bool(f['OS/2'].fsSelection&1)==oblique

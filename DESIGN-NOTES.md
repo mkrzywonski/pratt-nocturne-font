@@ -1,5 +1,10 @@
 # Design notes
 
+## Version 2.001
+
+Lowercase d now has right-facing top and foot serifs mirroring the left-facing details on b. Its advance is widened slightly to accommodate the added projection. The change propagates to accented d and barred d in all four styles.
+
+
 Pratt Nocturne is an original vector interpretation of unusual handwriting. It preserves characteristic constructions while regularizing stroke weight and spacing. Missing characters are designed from related forms; they are not presented as recovered handwriting.
 
 ## Shared constructions

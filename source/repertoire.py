@@ -1,5 +1,5 @@
 # Program logic: MIT; original glyph/design data: OFL-1.1. See ../LICENSING.md.
-"""Latin repertoire, compositions, marks, and publishing symbols for version 2.000.
+"""Latin repertoire, compositions, marks, and publishing symbols for version 2.001.
 Original drawings and derived forms use the same pressure-stroke builder as the family.
 """
 import math, unicodedata as ud
@@ -60,7 +60,7 @@ def add_drawings(g,G):
  g('Ħ',630,*G['H']['paths'],'M 53 559 L 550 578')
  g('ħ',470,*G['h']['paths'],'M 62 465 L 256 478')
  g('Đ',650,*G['D']['paths'],'M 96 343 L 358 358')
- g('đ',470,*G['d']['paths'],'M 219 486 L 430 499')
+ g('đ',G['d']['width'],*G['d']['paths'],'M 219 486 L 430 499')
  g('Ł',500,*G['L']['paths'],'M 51 244 L 305 493')
  g('ł',310,*G['l']['paths'],'M 54 242 L 252 442')
  g('Ŧ',540,*G['T']['paths'],'M 137 368 L 424 380')
@@ -165,6 +165,7 @@ def extend(G,shapes,widths,cmap,weight,stroke,name):
   if mark=='\u0327' and base=='g':mn='comma.above';kind='above'
   ax,ay=anchors[actual][kind]
   gn=put(c,union(shapes[actual],translate(shapes[mn],xoff=ax,yoff=ay)),widths[actual])
+  if c=='ď':widths[gn]=max(widths[gn],math.ceil(shapes[gn].bounds[2]+25))
   anchors[gn]=baseanchors(gn)
   compositions.append((bn,name(mark),gn))
  # Long-s acute/caron variants and all Extended-A members should now be present.

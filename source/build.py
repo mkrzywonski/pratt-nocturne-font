@@ -68,7 +68,7 @@ DIGIT_LOWER_RIGHT = 'M 259 345 C 409 302 470 183 443 79 Q 429 -5 311 15 L 106 47
 g('a',375,'M 81 363 L 292 376','M 179 369 L 188 227','M 150 153 L 215 -291')
 g('b',450,'M 43 606 L 140 590 Q 148 347 132 26 L 53 28','M 141 354 L 240 327 Q 351 288 365 137 Q 378 27 132 26')
 g('c',410,'M 328 340 C 114 460 48 185 106 51 Q 157 -25 342 23')
-g('d',460,'M 355 603 Q 318 367 359 8','M 332 345 C 105 410 40 151 117 42 Q 201 -2 349 17')
+g('d',500,'M 452 619 L 355 603 Q 318 367 359 8 L 438 10','M 332 345 C 105 410 40 151 117 42 Q 201 -2 349 17')
 g('e',370,'M 96 265 L 305 278 Q 270 389 167 372 Q 85 365 96 265 C 94 102 100 -157 198 -199 Q 248 -220 281 -156','M 57 261 L 105 266')
 g('f',340,'M 231 580 L 104 599 Q 86 599 92 562 L 164 -138','M 55 374 L 299 389')
 g('g',460,'M 346 345 C 89 440 66 73 224 53 Q 287 44 351 99','M 352 334 C 374 64 441 -323 256 -343 Q 183 -346 146 -312')
@@ -313,9 +313,9 @@ def build(style,weight,oblique=False):
    fb.setupCFF('PrattNocturne-'+file_style,{'FullName':'Pratt Nocturne '+style,'FamilyName':'Pratt Nocturne','Notice':FONT_COPYRIGHT+' Licensed under SIL Open Font License 1.1. https://openfontlicense.org/','Weight':'Bold' if bold else 'Regular','ItalicAngle':-8 if oblique else 0},cs,{})
   metrics={n:(widths[n],round(shapes[n].bounds[0]) if not shapes[n].is_empty else 0) for n in order}
   fb.setupHorizontalMetrics(metrics);fb.setupHorizontalHeader(ascent=1180,descent=-620,lineGap=0,caretSlopeRise=1000,caretSlopeRun=141 if oblique else 0)
-  fb.setupNameTable({'familyName':'Pratt Nocturne','styleName':legacy_style,'typographicFamily':'Pratt Nocturne','typographicSubfamily':style,'uniqueFontIdentifier':'Pratt Nocturne '+style+' 2.000','fullName':'Pratt Nocturne '+style,'psName':'PrattNocturne-'+file_style,'version':'Version 2.000','copyright':FONT_COPYRIGHT,'licenseDescription':FONT_LICENSE,'licenseInfoURL':'https://openfontlicense.org/','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D.','designer':'Pratt Nocturne project'})
+  fb.setupNameTable({'familyName':'Pratt Nocturne','styleName':legacy_style,'typographicFamily':'Pratt Nocturne','typographicSubfamily':style,'uniqueFontIdentifier':'Pratt Nocturne '+style+' 2.001','fullName':'Pratt Nocturne '+style,'psName':'PrattNocturne-'+file_style,'version':'Version 2.001','copyright':FONT_COPYRIGHT,'licenseDescription':FONT_LICENSE,'licenseInfoURL':'https://openfontlicense.org/','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D.','designer':'Pratt Nocturne project'})
   fb.setupOS2(version=4,sTypoAscender=1180,sTypoDescender=-620,sTypoLineGap=0,usWinAscent=1180,usWinDescent=620,fsType=0,usWeightClass=700 if bold else 400,fsSelection=(1<<7)|(1<<8)|(32 if bold else 0)|(513 if oblique else (0 if bold else 64)),sxHeight=365,sCapHeight=700)
-  fb.font['head'].macStyle=(1 if bold else 0)|(2 if oblique else 0);fb.font['head'].fontRevision=2.0;fb.setupPost(italicAngle=-8 if oblique else 0);addOpenTypeFeaturesFromString(fb.font,features)
+  fb.font['head'].macStyle=(1 if bold else 0)|(2 if oblique else 0);fb.font['head'].fontRevision=2.001;fb.setupPost(italicAngle=-8 if oblique else 0);addOpenTypeFeaturesFromString(fb.font,features)
   fb.save(ROOT/'fonts'/f'PrattNocturne-{file_style}.{ext}')
   if ext=='ttf':
    fb.font.flavor='woff2';fb.font.save(ROOT/'fonts'/f'PrattNocturne-{file_style}.woff2')
