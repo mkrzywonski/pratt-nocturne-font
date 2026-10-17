@@ -1,0 +1,242 @@
+{
+  "A": {
+    "source": "Letter",
+    "image": "U0041.png",
+    "uncertain": false
+  },
+  "B": {
+    "source": "Envelope",
+    "image": "U0042.png",
+    "uncertain": false
+  },
+  "C": {
+    "source": "Letter",
+    "image": "U0043.png",
+    "uncertain": false
+  },
+  "D": {
+    "source": "Letter",
+    "image": "U0044.png",
+    "uncertain": false
+  },
+  "F": {
+    "source": "Letter",
+    "image": "U0046.png",
+    "uncertain": false
+  },
+  "G": {
+    "source": "Letter",
+    "image": "U0047.png",
+    "uncertain": false
+  },
+  "J": {
+    "source": "Letter",
+    "image": "U004A.png",
+    "uncertain": false
+  },
+  "N": {
+    "source": "Letter",
+    "image": "U004E.png",
+    "uncertain": false
+  },
+  "P": {
+    "source": "Letter",
+    "image": "U0050.png",
+    "uncertain": false
+  },
+  "Q": {
+    "source": "Letter",
+    "image": "U0051.png",
+    "uncertain": false
+  },
+  "R": {
+    "source": "Letter",
+    "image": "U0052.png",
+    "uncertain": false
+  },
+  "S": {
+    "source": "Letter",
+    "image": "U0053.png",
+    "uncertain": false
+  },
+  "T": {
+    "source": "Letter",
+    "image": "U0054.png",
+    "uncertain": false
+  },
+  "V": {
+    "source": "Letter",
+    "image": "U0056.png",
+    "uncertain": true
+  },
+  "Y": {
+    "source": "Letter",
+    "image": "U0059.png",
+    "uncertain": false
+  },
+  "a": {
+    "source": "Letter",
+    "image": "U0061.png",
+    "uncertain": false
+  },
+  "b": {
+    "source": "Letter",
+    "image": "U0062.png",
+    "uncertain": true
+  },
+  "c": {
+    "source": "Letter",
+    "image": "U0063.png",
+    "uncertain": false
+  },
+  "d": {
+    "source": "Letter",
+    "image": "U0064.png",
+    "uncertain": false
+  },
+  "e": {
+    "source": "Letter",
+    "image": "U0065.png",
+    "uncertain": false
+  },
+  "f": {
+    "source": "Letter",
+    "image": "U0066.png",
+    "uncertain": false
+  },
+  "g": {
+    "source": "Letter",
+    "image": "U0067.png",
+    "uncertain": false
+  },
+  "h": {
+    "source": "Letter",
+    "image": "U0068.png",
+    "uncertain": false
+  },
+  "i": {
+    "source": "Letter",
+    "image": "U0069.png",
+    "uncertain": false
+  },
+  "l": {
+    "source": "Letter",
+    "image": "U006C.png",
+    "uncertain": false
+  },
+  "m": {
+    "source": "Letter",
+    "image": "U006D.png",
+    "uncertain": false
+  },
+  "n": {
+    "source": "Letter",
+    "image": "U006E.png",
+    "uncertain": false
+  },
+  "o": {
+    "source": "Letter",
+    "image": "U006F.png",
+    "uncertain": false
+  },
+  "p": {
+    "source": "Letter",
+    "image": "U0070.png",
+    "uncertain": true
+  },
+  "r": {
+    "source": "Letter",
+    "image": "U0072.png",
+    "uncertain": false
+  },
+  "s": {
+    "source": "Letter",
+    "image": "U0073.png",
+    "uncertain": false
+  },
+  "t": {
+    "source": "Letter",
+    "image": "U0074.png",
+    "uncertain": false
+  },
+  "u": {
+    "source": "Letter",
+    "image": "U0075.png",
+    "uncertain": false
+  },
+  "v": {
+    "source": "Letter",
+    "image": "U0076.png",
+    "uncertain": true
+  },
+  "w": {
+    "source": "Letter",
+    "image": "U0077.png",
+    "uncertain": false
+  },
+  "x": {
+    "source": "Envelope",
+    "image": "U0078.png",
+    "uncertain": true
+  },
+  "y": {
+    "source": "Letter",
+    "image": "U0079.png",
+    "uncertain": false
+  },
+  "0": {
+    "source": "Letter",
+    "image": "U0030.png",
+    "uncertain": false
+  },
+  "1": {
+    "source": "Letter",
+    "image": "U0031.png",
+    "uncertain": false
+  },
+  "2": {
+    "source": "Letter",
+    "image": "U0032.png",
+    "uncertain": false
+  },
+  "4": {
+    "source": "Letter",
+    "image": "U0034.png",
+    "uncertain": false
+  },
+  "6": {
+    "source": "Envelope",
+    "image": "U0036.png",
+    "uncertain": false
+  },
+  "7": {
+    "source": "Envelope",
+    "image": "U0037.png",
+    "uncertain": false
+  },
+  "8": {
+    "source": "Letter",
+    "image": "U0038.png",
+    "uncertain": false
+  },
+  ".": {
+    "source": "Letter",
+    "image": "U002E.png",
+    "uncertain": false
+  },
+  ",": {
+    "source": "Letter",
+    "image": "U002C.png",
+    "uncertain": true
+  },
+  ":": {
+    "source": "Letter",
+    "image": "U003A.png",
+    "uncertain": false
+  },
+  "?": {
+    "source": "Letter",
+    "image": "U003F.png",
+    "uncertain": false
+  }
+}

@@ -1,0 +1,17 @@
+PrattNocturne-Bold.otf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Bold.ttf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Bold.woff2: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-BoldOblique.otf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-BoldOblique.ttf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-BoldOblique.woff2: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Oblique.otf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Oblique.ttf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Oblique.woff2: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Regular.otf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Regular.ttf: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Regular.woff2: sanitizer, coverage, bounds, embedding and style metadata PASS; 426 characters, 475 glyphs.
+Regular: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
+Bold: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
+Oblique: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
+BoldOblique: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
+No exhaustive cross-application or small-size hinting validation.
