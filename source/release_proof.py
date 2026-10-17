@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 from pathlib import Path
 import subprocess, html, unicodedata
 from PIL import Image, ImageDraw, ImageFont

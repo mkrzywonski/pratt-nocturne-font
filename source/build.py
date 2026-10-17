@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Program logic: MIT; original glyph/design data: OFL-1.1. See ../LICENSING.md.
 """Original centerline drawings -> pressure ribbons -> fitted cubic outlines -> OTF/TTF/WOFF2.
 Run with the dependencies in shell.nix. Coordinates use a 1000-unit em, y up.
 """
@@ -20,6 +21,9 @@ from repertoire import add_drawings, extend, transform_for_oblique, features_for
 from PIL import Image, ImageDraw, ImageFont
 ROOT=Path(__file__).resolve().parents[1]
 (ROOT/'fonts').mkdir(exist_ok=True)
+FONT_COPYRIGHT='Copyright (c) 2026 Pratt Nocturne contributors.'
+FONT_LICENSE=(ROOT/'OFL.txt').read_text()
+(ROOT/'fonts'/'OFL.txt').write_text(FONT_LICENSE)
 G={}
 def g(c,w,*paths): G[c]={'width':w,'paths':list(paths)}
 # Shared construction vocabulary, in font units. These are explicit relationships,
@@ -306,10 +310,10 @@ def build(style,weight,oblique=False):
    cs={}
    for n in order:
     p=T2CharStringPen(widths[n],None);recs[n].replay(p);cs[n]=p.getCharString()
-   fb.setupCFF('PrattNocturne-'+file_style,{'FullName':'Pratt Nocturne '+style,'FamilyName':'Pratt Nocturne','Weight':'Bold' if bold else 'Regular','ItalicAngle':-8 if oblique else 0},cs,{})
+   fb.setupCFF('PrattNocturne-'+file_style,{'FullName':'Pratt Nocturne '+style,'FamilyName':'Pratt Nocturne','Notice':FONT_COPYRIGHT+' Licensed under SIL Open Font License 1.1. https://openfontlicense.org/','Weight':'Bold' if bold else 'Regular','ItalicAngle':-8 if oblique else 0},cs,{})
   metrics={n:(widths[n],round(shapes[n].bounds[0]) if not shapes[n].is_empty else 0) for n in order}
   fb.setupHorizontalMetrics(metrics);fb.setupHorizontalHeader(ascent=1180,descent=-620,lineGap=0,caretSlopeRise=1000,caretSlopeRun=141 if oblique else 0)
-  fb.setupNameTable({'familyName':'Pratt Nocturne','styleName':legacy_style,'typographicFamily':'Pratt Nocturne','typographicSubfamily':style,'uniqueFontIdentifier':'Pratt Nocturne '+style+' 2.000','fullName':'Pratt Nocturne '+style,'psName':'PrattNocturne-'+file_style,'version':'Version 2.000','copyright':'Original outline design 2026. Pratt Nocturne project.','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D.','designer':'Pratt Nocturne project'})
+  fb.setupNameTable({'familyName':'Pratt Nocturne','styleName':legacy_style,'typographicFamily':'Pratt Nocturne','typographicSubfamily':style,'uniqueFontIdentifier':'Pratt Nocturne '+style+' 2.000','fullName':'Pratt Nocturne '+style,'psName':'PrattNocturne-'+file_style,'version':'Version 2.000','copyright':FONT_COPYRIGHT,'licenseDescription':FONT_LICENSE,'licenseInfoURL':'https://openfontlicense.org/','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D.','designer':'Pratt Nocturne project'})
   fb.setupOS2(version=4,sTypoAscender=1180,sTypoDescender=-620,sTypoLineGap=0,usWinAscent=1180,usWinDescent=620,fsType=0,usWeightClass=700 if bold else 400,fsSelection=(1<<7)|(1<<8)|(32 if bold else 0)|(513 if oblique else (0 if bold else 64)),sxHeight=365,sCapHeight=700)
   fb.font['head'].macStyle=(1 if bold else 0)|(2 if oblique else 0);fb.font['head'].fontRevision=2.0;fb.setupPost(italicAngle=-8 if oblique else 0);addOpenTypeFeaturesFromString(fb.font,features)
   fb.save(ROOT/'fonts'/f'PrattNocturne-{file_style}.{ext}')

@@ -70,3 +70,7 @@ Style metadata follows the OpenType [OS/2 selection flags](https://learn.microso
 ## Source-image privacy
 
 Only metadata-free, individual-character crops are included in source/exemplars/. The proof embeds those small images directly. Full documents, private transcriptions, addresses, source coordinates and historical drafts are excluded. The proof distinguishes direct exemplars, uncertain case assignments, related base forms and characters with no direct exemplar. Both font and proof generators work without access to the original documents.
+
+## License
+
+The fonts and original design data use **SIL Open Font License 1.1**, with **no Reserved Font Names**. Build and proof program logic uses **MIT**. See [licensing scope](LICENSING.md), [OFL.txt](OFL.txt) and [LICENSE-MIT.txt](LICENSE-MIT.txt).

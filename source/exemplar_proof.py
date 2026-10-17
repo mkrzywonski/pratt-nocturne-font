@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Complete font comparison using metadata-free, single-character source crops."""
 from pathlib import Path
 import json, math, subprocess, unicodedata as ud

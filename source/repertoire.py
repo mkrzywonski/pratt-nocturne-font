@@ -1,3 +1,4 @@
+# Program logic: MIT; original glyph/design data: OFL-1.1. See ../LICENSING.md.
 """Latin repertoire, compositions, marks, and publishing symbols for version 2.000.
 Original drawings and derived forms use the same pressure-stroke builder as the family.
 """

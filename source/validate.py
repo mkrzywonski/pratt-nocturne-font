@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 from pathlib import Path
 import subprocess, json, tempfile, shutil, unicodedata
 from fontTools.ttLib import TTFont
@@ -8,7 +9,7 @@ OTS=shutil.which('ots-sanitize')
 if not HB or not OTS:raise SystemExit('Run inside nix-shell source/shell.nix, or install HarfBuzz and OpenType Sanitizer.')
 lines=[]
 coverage=set(range(32,127))|set(range(160,384))|set(range(0x218,0x21c))
-for p in sorted((ROOT/'fonts').iterdir()):
+for p in sorted(p for p in (ROOT/'fonts').iterdir() if p.suffix in {'.ttf','.otf','.woff2'}):
  f=TTFont(p);cm=f.getBestCmap();gs=f.getGlyphSet()
  assert coverage<=set(cm),(p,coverage-set(cm))
  for n in f.getGlyphOrder():
@@ -21,9 +22,12 @@ for p in sorted((ROOT/'fonts').iterdir()):
  assert bool(f['OS/2'].fsSelection&512)==oblique
  assert f['post'].italicAngle==(-8 if oblique else 0)
  assert f['OS/2'].fsType==0
+ assert f['name'].getDebugName(13)==(ROOT/'OFL.txt').read_text()
+ assert f['name'].getDebugName(14)=='https://openfontlicense.org/'
+ assert f['name'].getDebugName(0)=='Copyright (c) 2026 Pratt Nocturne contributors.'
  with tempfile.NamedTemporaryFile() as tmp:
   r=subprocess.run([OTS,str(p),tmp.name],capture_output=True,text=True);assert r.returncode==0,r.stderr
- lines.append(f'{p.name}: sanitizer, coverage, bounds, embedding and style metadata PASS; {len(cm)} characters, {len(gs)} glyphs.')
+ lines.append(f'{p.name}: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; {len(cm)} characters, {len(gs)} glyphs.')
 for style in ['Regular','Bold','Oblique','BoldOblique']:
  p=ROOT/'fonts'/f'PrattNocturne-{style}.ttf';f=TTFont(p);cm=f.getBestCmap()
  def shape(s,features=''):
