@@ -83,7 +83,3 @@ Only metadata-free, individual-character crops are included in source/exemplars/
 ## License
 
 The fonts and original design data use **SIL Open Font License 1.1**, with **no Reserved Font Names**. Build and proof program logic uses **MIT**. See [licensing scope](LICENSING.md), [OFL.txt](OFL.txt) and [LICENSE-MIT.txt](LICENSE-MIT.txt).
-
-## Distribution
-
-[DaFont submission text and instructions](distribution/DAFONT-SUBMISSION.md) accompany the compact directory ZIP. The distributable packages contain no source photographs. [FONTLOG.txt](FONTLOG.txt) records the public design history.
