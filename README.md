@@ -6,7 +6,13 @@ This font was inspired by the unique handwriting in a letter I received many yea
 
 **Version 2.001 · Regular · Bold · Oblique · Bold Oblique**
 
-![Four styles and sample characters](specimens/Release-2.001.png)
+![Pratt Nocturne preview](specimens/Public-Preview.png)
+
+## Download
+
+[**Download the four desktop fonts (TTF)**](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.001-Desktop-TTF.zip) · [All release downloads](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest) · [Short specimen](specimens/Public-Specimen.pdf)
+
+The desktop ZIP contains the fonts, installation instructions, OFL license, font history and a short specimen. OTF and self-hosted WOFF2 packages are also available. Install one desktop format.
 
 ## Fonts and proofs
 
@@ -61,6 +67,8 @@ On NixOS or another system with Nix:
     nix-shell source/shell.nix --run 'python source/release_proof.py'
     nix-shell source/shell.nix --run 'python source/exemplar_proof.py'
     nix-shell source/shell.nix --run 'python source/validate.py'
+    nix-shell source/shell.nix --run 'python source/public_specimen.py'
+    nix-shell source/shell.nix --run 'python source/package_release.py'
 
 Otherwise provide Python with FontTools, Pillow, Shapely, Brotli and ReportLab, plus HarfBuzz, OpenType Sanitizer and Fontconfig. Proof generators use DejaVu Sans for labels.
 
@@ -75,3 +83,7 @@ Only metadata-free, individual-character crops are included in source/exemplars/
 ## License
 
 The fonts and original design data use **SIL Open Font License 1.1**, with **no Reserved Font Names**. Build and proof program logic uses **MIT**. See [licensing scope](LICENSING.md), [OFL.txt](OFL.txt) and [LICENSE-MIT.txt](LICENSE-MIT.txt).
+
+## Distribution
+
+[DaFont submission text and instructions](distribution/DAFONT-SUBMISSION.md) accompany the compact directory ZIP. The distributable packages contain no source photographs. [FONTLOG.txt](FONTLOG.txt) records the public design history.

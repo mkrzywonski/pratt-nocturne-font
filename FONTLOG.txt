@@ -1,0 +1,28 @@
+FONTLOG for Pratt Nocturne
+
+Pratt Nocturne is an original drawn interpretation of unusual handwriting,
+with suspended heads, falling vowels, boxy curves and projecting serifs.
+It is a display family with four styles and extended Latin support.
+The fonts are licensed under SIL OFL 1.1, with no Reserved Font Names.
+
+2.001 — First packaged public release
+- Regular, Bold, Oblique and Bold Oblique.
+- 426 encoded characters and 475 glyphs in each style.
+- Full Latin-1 and Latin Extended-A, Romanian comma-below letters,
+  publishing symbols, common fractions and combining accents.
+- OpenType kerning, contextual and stylistic alternates, small figures,
+  common fraction substitutions and mark positioning.
+- Lowercase d has mirrored counterparts to b's top and foot serifs;
+  d-caron and barred d inherit the change.
+- Includes TTF, OTF and WOFF2 distributions.
+
+2.000 — Initial complete Latin family
+- Expanded repertoire and restrained eight-degree oblique companions.
+- Added accent attachment, style linking and publishing characters.
+
+Earlier development
+- Established the core alphabet and the signature a, e, D, r, R and 9.
+- Refined shared stem, bowl and numeral constructions.
+
+Project: https://github.com/mkrzywonski/pratt-nocturne-font
+Attribution: Pratt Nocturne contributors

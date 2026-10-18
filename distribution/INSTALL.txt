@@ -1,0 +1,38 @@
+PRATT NOCTURNE 2.001
+Regular / Bold / Oblique / Bold Oblique
+
+INSTALL
+Extract this ZIP first. Install all four font files of one format.
+Choose TTF or OTF; you do not need both.
+
+Windows: select the four font files, right-click, and choose Install
+(or Show more options > Install).
+macOS: open the font files in Font Book and choose Install.
+Linux: copy the files into ~/.local/share/fonts/ and refresh the font
+cache with fc-cache -f, or use your desktop's font installer.
+
+Restart applications after installation if the family does not appear.
+Select "Pratt Nocturne". Bold and Italic controls select the companion
+styles; the supplied slanted faces are named Oblique and Bold Oblique.
+
+USING THE FONT
+Best for titles, correspondence, poetry and short expressive passages.
+Try 24–36 pt or larger and allow generous line spacing.
+The a, e and 9 deliberately descend unusually far.
+Underlining is handled by your application.
+
+In applications with OpenType controls:
+  ss01: amplified a, e, r and D
+  calt: alternate second letters in adjacent aa, ee and rr
+  frac: common fractions (apply only to the fraction text)
+  sups / subs: superscript and subscript digits
+
+LICENSE
+Free for personal and commercial use under the SIL Open Font License 1.1.
+See OFL.txt for the full terms. No Reserved Font Names are declared.
+Keep the copyright notice and OFL.txt when redistributing the fonts.
+
+SOURCE, UPDATES AND ISSUES
+https://github.com/mkrzywonski/pratt-nocturne-font
+
+Pratt Nocturne contributors
