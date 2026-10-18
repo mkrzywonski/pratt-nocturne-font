@@ -4,22 +4,22 @@ An expressive handwriting-inspired display family with suspended letter heads, d
 
 This font was inspired by the unique handwriting in a letter I received many years ago. I liked the odd style so much that I created this font in order to preserve it. I find the lower case A irreconcilable. In addition to the swooping D, the sagging e, and the halfway constructed R, it is the reason I can't get the author's letter forms out of my mind even after so long. I hope you enjoy Pratt-Nocturne.
 
-**Version 2.001 · Regular · Bold · Oblique · Bold Oblique**
+**Version 2.010 · Regular · Bold · Oblique · Bold Oblique**
 
 ![Pratt Nocturne preview](specimens/Public-Preview.png)
 
 ## Download
 
-[**Download the four desktop fonts (TTF)**](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.001-Desktop-TTF.zip) · [All release downloads](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest) · [Short specimen](specimens/Public-Specimen.pdf)
+[**Download the four desktop fonts (TTF)**](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.010-Desktop-TTF.zip) · [All release downloads](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest) · [Short specimen](specimens/Public-Specimen.pdf)
 
 The desktop ZIP contains the fonts, installation instructions, OFL license, font history and a short specimen. OTF and self-hosted WOFF2 packages are also available. Install one desktop format.
 
 ## Fonts and proofs
 
 - [Font files](fonts/): TTF and OTF for desktop use; WOFF2 for websites.
-- [Complete character and exemplar proof](specimens/Complete-Exemplar-Proof.pdf): all 426 encoded characters and 49 additional glyphs, in all four styles, with isolated handwritten exemplars where available.
+- [Complete character and exemplar proof](specimens/Complete-Exemplar-Proof.pdf): all 426 encoded characters and 62 additional glyphs, in all four styles, with isolated handwritten exemplars where available.
 - [b/d serif detail](specimens/Stem-Details.pdf): the mirrored stem details and inherited d forms.
-- [Family proof](specimens/Release-2.001.pdf): style comparison and character inventory.
+- [Family proof](specimens/Release-2.010.pdf): style comparison and character inventory.
 - [Interactive specimen](specimens/Try-Pratt-Nocturne.html): download the repository and open this file locally.
 - [Exact character inventory](CHARACTER-SET.txt) and [validation results](VALIDATION.txt).
 
@@ -33,7 +33,7 @@ The obliques lean eight degrees, with individually adjusted sidebearings and tra
 
 ## Coverage
 
-Each style contains **426 encoded characters and 475 glyphs**:
+Each style contains **426 encoded characters and 488 glyphs**:
 
 - Printable ASCII, full Latin-1 Supplement and Latin Extended-A.
 - Romanian comma-below letters, capital sharp S and a dotted-circle fallback.
@@ -49,6 +49,7 @@ This is a Latin display family. Greek, Cyrillic and comprehensive Vietnamese cov
 | Feature | Behavior |
 | --- | --- |
 | kern | Selected optical spacing pairs |
+| ss02 | Readable, d-derived a and q (including accented a, æ and ª) |
 | calt | Alternate second letters in adjacent aa, ee and rr |
 | ss01 | Amplified a, e, r and D |
 | ccmp, mark, mkmk | Accent compositions, attachment and stacking |
@@ -68,11 +69,12 @@ On NixOS or another system with Nix:
     nix-shell source/shell.nix --run 'python source/exemplar_proof.py'
     nix-shell source/shell.nix --run 'python source/validate.py'
     nix-shell source/shell.nix --run 'python source/public_specimen.py'
+    nix-shell source/shell.nix --run 'python source/readable_proof.py'
     nix-shell source/shell.nix --run 'python source/package_release.py'
 
 Otherwise provide Python with FontTools, Pillow, Shapely, Brotli and ReportLab, plus HarfBuzz, OpenType Sanitizer and Fontconfig. Proof generators use DejaVu Sans for labels.
 
-source/build.py contains the centerline drawings and outline builder. source/repertoire.py adds extended characters, compositions, anchors and the oblique transformation. The builder constructs pressure-modulated strokes, unions overlaps, fits cubic Bézier outlines, and exports OTF, TTF and WOFF2. drawings.json, features.fea and outline-sheet.svg are generated outputs.
+source/build.py contains the centerline drawings and outline builder. source/readable.py defines the approved readable alternates. source/repertoire.py adds extended characters, compositions, anchors and the oblique transformation. The builder constructs pressure-modulated strokes, unions overlaps, fits cubic Bézier outlines, and exports OTF, TTF and WOFF2. drawings.json, features.fea and outline-sheet.svg are generated outputs.
 
 Style metadata follows the OpenType [OS/2 selection flags](https://learn.microsoft.com/en-us/typography/opentype/spec/os2#fsselection) and [name-table conventions](https://learn.microsoft.com/en-us/typography/opentype/spec/name).
 
@@ -83,3 +85,20 @@ Only metadata-free, individual-character crops are included in source/exemplars/
 ## License
 
 The fonts and original design data use **SIL Open Font License 1.1**, with **no Reserved Font Names**. Build and proof program logic uses **MIT**. See [licensing scope](LICENSING.md), [OFL.txt](OFL.txt) and [LICENSE-MIT.txt](LICENSE-MIT.txt).
+
+### Readable forms
+
+Enable **Readable a and q** (`ss02`) to use the approved d-derived bowls.
+The readable a has no upper serif; q retains its serif and descending foot.
+Accented a, æ and ª follow the same design. This choice takes precedence
+for a when expressive alternates (`ss01`) or contextual alternates are active.
+The original a and q remain the defaults in Pratt Nocturne.
+
+For applications without stylistic-set controls, install **Pratt Nocturne
+Readable**: a separate family with the same four styles and readable forms
+selected by default. Both families can be installed together.
+[Readable TTF download](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.010-Readable-TTF.zip) ·
+[Readable comparison proof](specimens/Readable-Proof.pdf).
+
+Web CSS: `font-feature-settings: "ss02" 1;`, or select
+`font-family: "Pratt Nocturne Readable";` with its webfonts loaded.

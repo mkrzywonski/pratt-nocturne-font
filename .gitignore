@@ -5,3 +5,5 @@ __pycache__/
 /private/
 *.zip
 /dist/
+
+/design/

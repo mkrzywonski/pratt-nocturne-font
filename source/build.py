@@ -18,6 +18,7 @@ from shapely.geometry import Polygon, Point
 from shapely.ops import unary_union
 from shapely.geometry.polygon import orient
 from repertoire import add_drawings, extend, transform_for_oblique, features_for
+from readable import add_readable
 from PIL import Image, ImageDraw, ImageFont
 ROOT=Path(__file__).resolve().parents[1]
 (ROOT/'fonts').mkdir(exist_ok=True)
@@ -291,34 +292,39 @@ def build(style,weight,oblique=False):
  for c,base in [('Æ','A'),('Œ','O'),('œ','o')]:
   second='E' if base.isupper() else 'e';dx=G[base]['width']-65;gn=name(c);shapes[gn]=unary_union([shapes[name(base)],translate(shapes[name(second)],xoff=dx)]);widths[gn]=dx+G[second]['width'];cmap[ord(c)]=gn
  data=extend(G,shapes,widths,cmap,weight,stroke,name)
+ readable=add_readable(G,shapes,widths,data,weight,stroke,name)
  if oblique:transform_for_oblique(shapes,widths,data)
  order=['.notdef']+[n for n in shapes if n!='.notdef'];recs={n:record(shapes[n]) for n in order}
  features='languagesystem DFLT dflt;\nlanguagesystem latn dflt;\n'
  features+=features_for(data,name,shapes)
  features+='feature ss01 {\n'+''.join(f'sub {name(c)} by {c}.alt;\n' for c in 'aerD')+'} ss01;\n'
  features+='feature calt {\n'+''.join(f'sub {name(c)} {name(c)}\' by {c}.alt;\n' for c in 'aer')+'} calt;\n'
+ features+='feature ss02 {\n featureNames { name "Readable a and q"; };\n'+''.join(f'sub {base} by {alt};\n' for base,alt in readable.items())+'} ss02;\n'
  pairs={'Pr':-23,'Pa':-20,'Pe':-24,'Po':-18,'Da':-16,'De':-20,'Do':-16,'Ta':-35,'Te':-32,'To':-30,'Tr':-22,'Ty':-22,'Va':-25,'Ve':-25,'Vo':-22,'Wa':-18,'We':-18,'Yo':-30,'Ya':-28,'Ye':-28,'AT':-22,'AV':-30,'AW':-15,'AY':-26,'LT':-25,'FA':-20,'Fo':-20,'ra':-8,'re':-9,'rr':0,'PR':-18,'Ra':-12,'Re':-12,'Ka':-14,'Ke':-12,'Ko':-12,'ka':-8,'ke':-8,'ko':-8,'Za':-8,'Ze':-8}
- features+='feature kern {\n'+''.join(f'pos {name(p[0])} {name(p[1])} {v};\n' for p,v in pairs.items())+'} kern;'
- for ext in ['otf','ttf']:
-  fb=FontBuilder(1000,isTTF=(ext=='ttf'));fb.setupGlyphOrder(order);fb.setupCharacterMap(cmap)
-  if ext=='ttf':
-   glyphs={}
-   for n in order:
-    p=TTGlyphPen(None);recs[n].replay(Cu2QuPen(p,max_err=.7,reverse_direction=False));glyphs[n]=p.glyph()
-   fb.setupGlyf(glyphs)
-  else:
-   cs={}
-   for n in order:
-    p=T2CharStringPen(widths[n],None);recs[n].replay(p);cs[n]=p.getCharString()
-   fb.setupCFF('PrattNocturne-'+file_style,{'FullName':'Pratt Nocturne '+style,'FamilyName':'Pratt Nocturne','Notice':FONT_COPYRIGHT+' Licensed under SIL Open Font License 1.1. https://openfontlicense.org/','Weight':'Bold' if bold else 'Regular','ItalicAngle':-8 if oblique else 0},cs,{})
-  metrics={n:(widths[n],round(shapes[n].bounds[0]) if not shapes[n].is_empty else 0) for n in order}
-  fb.setupHorizontalMetrics(metrics);fb.setupHorizontalHeader(ascent=1180,descent=-620,lineGap=0,caretSlopeRise=1000,caretSlopeRun=141 if oblique else 0)
-  fb.setupNameTable({'familyName':'Pratt Nocturne','styleName':legacy_style,'typographicFamily':'Pratt Nocturne','typographicSubfamily':style,'uniqueFontIdentifier':'Pratt Nocturne '+style+' 2.001','fullName':'Pratt Nocturne '+style,'psName':'PrattNocturne-'+file_style,'version':'Version 2.001','copyright':FONT_COPYRIGHT,'licenseDescription':FONT_LICENSE,'licenseInfoURL':'https://openfontlicense.org/','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D.','designer':'Pratt Nocturne project'})
-  fb.setupOS2(version=4,sTypoAscender=1180,sTypoDescender=-620,sTypoLineGap=0,usWinAscent=1180,usWinDescent=620,fsType=0,usWeightClass=700 if bold else 400,fsSelection=(1<<7)|(1<<8)|(32 if bold else 0)|(513 if oblique else (0 if bold else 64)),sxHeight=365,sCapHeight=700)
-  fb.font['head'].macStyle=(1 if bold else 0)|(2 if oblique else 0);fb.font['head'].fontRevision=2.001;fb.setupPost(italicAngle=-8 if oblique else 0);addOpenTypeFeaturesFromString(fb.font,features)
-  fb.save(ROOT/'fonts'/f'PrattNocturne-{file_style}.{ext}')
-  if ext=='ttf':
-   fb.font.flavor='woff2';fb.font.save(ROOT/'fonts'/f'PrattNocturne-{file_style}.woff2')
+ features+='feature kern {\n'+''.join(f'pos {name(p[0])} {name(p[1])} {v};\n' for p,v in pairs.items())+''.join(f'pos {name(p[0])} {readable[name("a")]} {v};\n' for p,v in pairs.items() if p[1]=='a')+'} kern;'
+ for is_readable in [False,True]:
+  family='Pratt Nocturne'+(' Readable' if is_readable else '')
+  prefix='PrattNocturne'+('Readable' if is_readable else '')
+  for ext in ['otf','ttf']:
+   fb=FontBuilder(1000,isTTF=(ext=='ttf'));fb.setupGlyphOrder(order);fb.setupCharacterMap({cp:readable.get(gn,gn) for cp,gn in cmap.items()} if is_readable else cmap)
+   if ext=='ttf':
+    glyphs={}
+    for n in order:
+     p=TTGlyphPen(None);recs[n].replay(Cu2QuPen(p,max_err=.7,reverse_direction=False));glyphs[n]=p.glyph()
+    fb.setupGlyf(glyphs)
+   else:
+    cs={}
+    for n in order:
+     p=T2CharStringPen(widths[n],None);recs[n].replay(p);cs[n]=p.getCharString()
+    fb.setupCFF(prefix+'-'+file_style,{'FullName':family+' '+style,'FamilyName':family,'Notice':FONT_COPYRIGHT+' Licensed under SIL Open Font License 1.1. https://openfontlicense.org/','Weight':'Bold' if bold else 'Regular','ItalicAngle':-8 if oblique else 0},cs,{})
+   metrics={n:(widths[n],round(shapes[n].bounds[0]) if not shapes[n].is_empty else 0) for n in order}
+   fb.setupHorizontalMetrics(metrics);fb.setupHorizontalHeader(ascent=1180,descent=-620,lineGap=0,caretSlopeRise=1000,caretSlopeRun=141 if oblique else 0)
+   fb.setupNameTable({'familyName':family,'styleName':legacy_style,'typographicFamily':family,'typographicSubfamily':style,'uniqueFontIdentifier':family+' '+style+' 2.010','fullName':family+' '+style,'psName':prefix+'-'+file_style,'version':'Version 2.010','copyright':FONT_COPYRIGHT,'licenseDescription':FONT_LICENSE,'licenseInfoURL':'https://openfontlicense.org/','description':'An original drawn interpretation; not a facsimile. ss01 offers amplified a, e, r and D; ss02 offers readable a and q.','designer':'Pratt Nocturne project'})
+   fb.setupOS2(version=4,sTypoAscender=1180,sTypoDescender=-620,sTypoLineGap=0,usWinAscent=1180,usWinDescent=620,fsType=0,usWeightClass=700 if bold else 400,fsSelection=(1<<7)|(1<<8)|(32 if bold else 0)|(513 if oblique else (0 if bold else 64)),sxHeight=365,sCapHeight=700)
+   fb.font['head'].macStyle=(1 if bold else 0)|(2 if oblique else 0);fb.font['head'].fontRevision=2.010;fb.setupPost(italicAngle=-8 if oblique else 0);addOpenTypeFeaturesFromString(fb.font,features)
+   fb.save(ROOT/'fonts'/f'{prefix}-{file_style}.{ext}')
+   if ext=='ttf':
+    fb.font.flavor='woff2';fb.font.save(ROOT/'fonts'/f'{prefix}-{file_style}.woff2')
  if style=='Regular':
   (ROOT/'source'/'features.fea').write_text(features)
   from fontTools.pens.svgPathPen import SVGPathPen

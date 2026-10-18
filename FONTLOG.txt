@@ -1,3 +1,9 @@
+2026-10-18 — Version 2.010
+Added the approved d-derived readable a and q as named stylistic set ss02,
+with matching accented a, æ and ª. Added a separate Pratt Nocturne Readable
+family in all four styles for applications without stylistic-set controls.
+All existing glyph outlines and metrics are preserved.
+
 FONTLOG for Pratt Nocturne
 
 Pratt Nocturne is an original drawn interpretation of unusual handwriting,

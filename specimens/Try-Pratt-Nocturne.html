@@ -1,20 +1,26 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Pratt Nocturne 2.001</title><style>@font-face{font-family:Pratt;src:url('../fonts/PrattNocturne-Regular.woff2');font-weight:400;font-style:normal;}
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Pratt Nocturne 2.010</title><style>@font-face{font-family:Pratt;src:url('../fonts/PrattNocturne-Regular.woff2');font-weight:400;font-style:normal;}
 @font-face{font-family:Pratt;src:url('../fonts/PrattNocturne-Oblique.woff2');font-weight:400;font-style:italic;}
 @font-face{font-family:Pratt;src:url('../fonts/PrattNocturne-Bold.woff2');font-weight:700;font-style:normal;}
 @font-face{font-family:Pratt;src:url('../fonts/PrattNocturne-BoldOblique.woff2');font-weight:700;font-style:italic;}
+@font-face{font-family:PrattReadable;src:url('../fonts/PrattNocturneReadable-Regular.woff2');font-weight:400;font-style:normal;}
+@font-face{font-family:PrattReadable;src:url('../fonts/PrattNocturneReadable-Oblique.woff2');font-weight:400;font-style:italic;}
+@font-face{font-family:PrattReadable;src:url('../fonts/PrattNocturneReadable-Bold.woff2');font-weight:700;font-style:normal;}
+@font-face{font-family:PrattReadable;src:url('../fonts/PrattNocturneReadable-BoldOblique.woff2');font-weight:700;font-style:italic;}
 body{max-width:1100px;margin:40px auto;padding:20px;background:#faf8f2;color:#252b32;font:16px sans-serif}
 .sample{font-family:Pratt;font-size:48px;line-height:1.8;overflow-wrap:anywhere}
 textarea{width:100%;box-sizing:border-box;background:transparent;padding:20px;min-height:250px}
 label{margin-right:20px}h2{font-size:18px;margin-top:30px} .oblique{font-style:italic}
-</style><h1>Pratt Nocturne / 2.001</h1><p>Four styles. Eight-degree oblique. Full Latin-1 and Latin Extended-A.</p>
+</style><h1>Pratt Nocturne / 2.010</h1><p>Four styles. Eight-degree oblique. Full Latin-1 and Latin Extended-A.</p>
+<label>Family <select id="family"><option value="Pratt">Original</option><option value="PrattReadable">Readable</option></select></label>
 <label>Style <select id="style"><option>Regular</option><option>Oblique</option><option>Bold</option><option>Bold Oblique</option></select></label>
 <label>Size <input id="size" type="range" min="24" max="100" value="48"></label>
 <label><input id="alt" type="checkbox">Expressive alternates</label>
+<label><input id="readable" type="checkbox">Readable a and q (ss02)</label>
 <textarea id="sample" class="sample">Dear Sir,
 A stranger kind of ordinary.
 Pratt Nocturne — 0123456789</textarea>
 <h2>Regular</h2><div class="sample" style="font-weight:400;font-style:normal">a e D r R q ? — A stranger kind of ordinary.</div><h2>Oblique</h2><div class="sample" style="font-weight:400;font-style:italic">a e D r R q ? — A stranger kind of ordinary.</div><h2>Bold</h2><div class="sample" style="font-weight:700;font-style:normal">a e D r R q ? — A stranger kind of ordinary.</div><h2>BoldOblique</h2><div class="sample" style="font-weight:700;font-style:italic">a e D r R q ? — A stranger kind of ordinary.</div><h2>SIGNATURE FORMS</h2><div class="sample">a e D r R q ? 0123456789</div><h2>LATIN LETTERS</h2><div class="sample">ÀÁÂÃÄÅ Æ Ç ÈÉÊË Ð Ñ Ø Œ Þ ß ẞ</div><h2>ACCENTS</h2><div class="sample">āăą ćčďđ ēėęě ğģ īįı ķ ł ńňŋ ő ř şșťț ůű</div><h2>LANGUAGE SAMPLES</h2><div class="sample">Příliš žluťoučký kůň. Zażółć gęślą jaźń.</div><h2>LANGUAGE SAMPLES</h2><div class="sample">Țară și școală. Árvíztűrő tükörfúrógép.</div><h2>PUBLISHING</h2><div class="sample">¡Hola! ¿Qué? «Voilà» „Ja“ — … † ‡ § ¶ © ® ™</div><h2>SYMBOLS / FRACTIONS</h2><div class="sample">$ ¢ £ ¥ € ¤ + − ± × ÷ ≠ ≤ ≥ ∞ ¼ ½ ¾ ⅜ ⅝</div><h2>SMALL FIGURES</h2><div class="sample">⁰¹²³⁴⁵⁶⁷⁸⁹  ₀₁₂₃₄₅₆₇₈₉</div><h2>COMBINING MARKS</h2><div class="sample">x́ ẍ x́̈ ạ ẹ ī ĵ</div><script>
 const sample=document.querySelector('#sample');
-function update(){let s=document.querySelector('#style').value;sample.style.fontWeight=s.includes('Bold')?700:400;sample.style.fontStyle=s.includes('Oblique')?'italic':'normal';sample.style.fontSize=document.querySelector('#size').value+'px';sample.style.fontFeatureSettings=document.querySelector('#alt').checked?'"ss01" 1':'"ss01" 0'}
+function update(){let s=document.querySelector('#style').value;sample.style.fontWeight=s.includes('Bold')?700:400;sample.style.fontStyle=s.includes('Oblique')?'italic':'normal';sample.style.fontSize=document.querySelector('#size').value+'px';sample.style.fontFamily=document.querySelector('#family').value;sample.style.fontFeatureSettings='"ss01" '+Number(document.querySelector('#alt').checked)+', "ss02" '+Number(document.querySelector('#readable').checked)}
 document.querySelectorAll('input,select').forEach(x=>x.addEventListener('input',update));
 </script></html>

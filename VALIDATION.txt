@@ -1,17 +1,33 @@
-PrattNocturne-Bold.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Bold.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Bold.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-BoldOblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-BoldOblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-BoldOblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Oblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Oblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Oblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Regular.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Regular.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
-PrattNocturne-Regular.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 475 glyphs.
+PrattNocturne-Bold.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Bold.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Bold.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-BoldOblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-BoldOblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-BoldOblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Oblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Oblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Oblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Regular.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Regular.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturne-Regular.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Bold.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Bold.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Bold.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-BoldOblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-BoldOblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-BoldOblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Oblique.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Oblique.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Oblique.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Regular.otf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Regular.ttf: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
+PrattNocturneReadable-Regular.woff2: sanitizer, coverage, bounds, embedding, OFL license and style metadata PASS; 426 characters, 488 glyphs.
 Regular: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
 Bold: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
 Oblique: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
 BoldOblique: HarfBuzz alternates, kerning, fractions, superscripts, NFC/NFD equivalence and mark positioning PASS.
+Regular: readable family/ss02 parity, named feature, accented forms and feature interactions PASS.
+Bold: readable family/ss02 parity, named feature, accented forms and feature interactions PASS.
+Oblique: readable family/ss02 parity, named feature, accented forms and feature interactions PASS.
+BoldOblique: readable family/ss02 parity, named feature, accented forms and feature interactions PASS.
 No exhaustive cross-application or small-size hinting validation.

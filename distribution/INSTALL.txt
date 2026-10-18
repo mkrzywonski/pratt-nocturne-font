@@ -1,4 +1,4 @@
-PRATT NOCTURNE 2.001
+PRATT NOCTURNE 2.010
 Regular / Bold / Oblique / Bold Oblique
 
 INSTALL
@@ -22,6 +22,7 @@ The a, e and 9 deliberately descend unusually far.
 Underlining is handled by your application.
 
 In applications with OpenType controls:
+  ss02: readable a and q, with matching accented a, æ and ª
   ss01: amplified a, e, r and D
   calt: alternate second letters in adjacent aa, ee and rr
   frac: common fractions (apply only to the fraction text)
@@ -36,3 +37,9 @@ SOURCE, UPDATES AND ISSUES
 https://github.com/mkrzywonski/pratt-nocturne-font
 
 Pratt Nocturne contributors
+
+READABLE FAMILY
+The separate Readable packages install as "Pratt Nocturne Readable".
+Choose that family if your application has no stylistic-set controls.
+Both families can coexist. Readable forms take precedence over expressive
+a alternates; all other expressive alternates remain available.
