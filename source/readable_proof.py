@@ -14,7 +14,7 @@ for family in ['PrattNocturne','PrattNocturneReadable']:
  for style in styles:
   pdfmetrics.registerFont(TTFont(family+style,str(ROOT/'fonts'/f'{family}-{style}.ttf')))
 c=canvas.Canvas(str(ROOT/'specimens/Readable-Proof.pdf'),pagesize=(792,1008))
-c.setTitle('Pratt Nocturne 2.010 — readable a and q')
+c.setTitle('Pratt Nocturne 2.011 — readable a and q')
 c.setAuthor('Pratt Nocturne contributors')
 def label(x,y,text,size=11):
  c.setFillColorRGB(.30,.34,.38);c.setFont('UI',size);c.drawString(x,y,text)

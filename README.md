@@ -4,13 +4,13 @@ An expressive handwriting-inspired display family with suspended letter heads, d
 
 This font was inspired by the unique handwriting in a letter I received many years ago. I liked the odd style so much that I created this font in order to preserve it. I find the lower case A irreconcilable. In addition to the swooping D, the sagging e, and the halfway constructed R, it is the reason I can't get the author's letter forms out of my mind even after so long. I hope you enjoy Pratt-Nocturne.
 
-**Version 2.010 · Regular · Bold · Oblique · Bold Oblique**
+**Version 2.011 · Regular · Bold · Oblique · Bold Oblique**
 
 ![Pratt Nocturne preview](specimens/Public-Preview.png)
 
 ## Download
 
-[**Download the four desktop fonts (TTF)**](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.010-Desktop-TTF.zip) · [All release downloads](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest) · [Short specimen](specimens/Public-Specimen.pdf)
+[**Download the four desktop fonts (TTF)**](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.011-Desktop-TTF.zip) · [All release downloads](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest) · [Short specimen](specimens/Public-Specimen.pdf)
 
 The desktop ZIP contains the fonts, installation instructions, OFL license, font history and a short specimen. OTF and self-hosted WOFF2 packages are also available. Install one desktop format.
 
@@ -18,8 +18,9 @@ The desktop ZIP contains the fonts, installation instructions, OFL license, font
 
 - [Font files](fonts/): TTF and OTF for desktop use; WOFF2 for websites.
 - [Complete character and exemplar proof](specimens/Complete-Exemplar-Proof.pdf): all 426 encoded characters and 62 additional glyphs, in all four styles, with isolated handwritten exemplars where available.
+- [Approved K, ? and @ proof](specimens/Final-Forms.pdf): both families in all four styles.
 - [b/d serif detail](specimens/Stem-Details.pdf): the mirrored stem details and inherited d forms.
-- [Family proof](specimens/Release-2.010.pdf): style comparison and character inventory.
+- [Family proof](specimens/Release-2.011.pdf): style comparison and character inventory.
 - [Interactive specimen](specimens/Try-Pratt-Nocturne.html): download the repository and open this file locally.
 - [Exact character inventory](CHARACTER-SET.txt) and [validation results](VALIDATION.txt).
 
@@ -70,6 +71,7 @@ On NixOS or another system with Nix:
     nix-shell source/shell.nix --run 'python source/validate.py'
     nix-shell source/shell.nix --run 'python source/public_specimen.py'
     nix-shell source/shell.nix --run 'python source/readable_proof.py'
+    nix-shell source/shell.nix --run 'python source/final_forms_proof.py'
     nix-shell source/shell.nix --run 'python source/package_release.py'
 
 Otherwise provide Python with FontTools, Pillow, Shapely, Brotli and ReportLab, plus HarfBuzz, OpenType Sanitizer and Fontconfig. Proof generators use DejaVu Sans for labels.
@@ -97,7 +99,7 @@ The original a and q remain the defaults in Pratt Nocturne.
 For applications without stylistic-set controls, install **Pratt Nocturne
 Readable**: a separate family with the same four styles and readable forms
 selected by default. Both families can be installed together.
-[Readable TTF download](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.010-Readable-TTF.zip) ·
+[Readable TTF download](https://github.com/mkrzywonski/pratt-nocturne-font/releases/latest/download/Pratt-Nocturne-2.011-Readable-TTF.zip) ·
 [Readable comparison proof](specimens/Readable-Proof.pdf).
 
 Web CSS: `font-feature-settings: "ss02" 1;`, or select

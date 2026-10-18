@@ -5,7 +5,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import hashlib, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist';OUT.mkdir(exist_ok=True)
-VERSION='2.010'
+VERSION='2.011'
 STYLES=['Regular','Bold','Oblique','BoldOblique']
 def archive(kind,entries):
  path=OUT/f'Pratt-Nocturne-{VERSION}-{kind}.zip'
@@ -27,7 +27,7 @@ for kind,ext in [('Desktop-TTF','ttf'),('Desktop-OTF','otf')]:
 for ext in ['ttf','otf']:
  assets.append(archive('Readable-'+ext.upper(),{**fontfiles(ext,True),**common,'INSTALL.txt':ROOT/'distribution/INSTALL.txt','Readable-Proof.pdf':ROOT/'specimens/Readable-Proof.pdf'}))
 assets.append(archive('DaFont',{**fontfiles('ttf'),**common,'README.txt':ROOT/'distribution/INSTALL.txt','Preview.png':ROOT/'specimens/Public-Preview.png'}))
-css='/* Pratt Nocturne 2.010. SIL Open Font License 1.1; see OFL.txt. */\n'
+css='/* Pratt Nocturne 2.011. SIL Open Font License 1.1; see OFL.txt. */\n'
 for s in STYLES:
  css+=f"""@font-face {{
   font-family: "Pratt Nocturne";
@@ -54,7 +54,7 @@ h2{font-size:16px;margin-top:2rem}
 <h2>Readable forms</h2><div class="sample" style="font-family: &quot;Pratt Nocturne Readable&quot;" contenteditable="true">A quiet place, an aqua sea.</div>
 <p>SIL Open Font License 1.1. See OFL.txt.</p></html>
 """
-webreadme="""PRATT NOCTURNE 2.010 / WEBFONTS
+webreadme="""PRATT NOCTURNE 2.011 / WEBFONTS
 
 Keep the CSS and eight WOFF2 files together. Link pratt-nocturne.css from
 your page, then use font-family: "Pratt Nocturne", serif.

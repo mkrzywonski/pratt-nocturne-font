@@ -29,7 +29,7 @@ assert len([cp for cp,_ in items if cp is not None])==len(cm)
 ui=subprocess.check_output(['fc-match','-f','%{file}','DejaVu Sans'],text=True)
 pdfmetrics.registerFont(PDFTTFont('UI',ui))
 c=canvas.Canvas(str(OUT),pagesize=(612,792),pageCompression=1)
-c.setTitle('Pratt Nocturne 2.010 — complete character and exemplar proof')
+c.setTitle('Pratt Nocturne 2.011 — complete character and exemplar proof')
 c.setAuthor('Pratt Nocturne project')
 def label(x,y,text,size=8,color='#39404a'):
  c.setFillColor(color);c.setFont('UI',size);c.drawString(x,y,text)
@@ -48,7 +48,7 @@ def paragraph(x,y,text,width=550,size=10):
 def header(title,subtitle):
  label(28,762,title,15);label(28,742,subtitle,8)
 def footer():
- label(28,17,'PRATT NOCTURNE 2.010  /  ORIGINAL SOURCE CROPS',7)
+ label(28,17,'PRATT NOCTURNE 2.011  /  ORIGINAL SOURCE CROPS',7)
  label(551,17,str(c.getPageNumber()),8)
 def crop(ev,x,y,w,h):
  c.drawImage(str(ROOT/'source/exemplars'/ev['image']),x,y,width=w,height=h,
@@ -76,7 +76,7 @@ def evidence(cp,g):
 header('Complete character / exemplar proof','426 encoded characters + 62 additional glyphs / all four styles')
 y=697
 for text in [
- 'Every character encoded in version 2.010 has its own card. A final section includes all unencoded glyphs: stylistic alternates, small figures, mark helpers and the missing-character box.',
+ 'Every character encoded in version 2.011 has its own card. A final section includes all unencoded glyphs: stylistic alternates, small figures, mark helpers and the missing-character box.',
  'Each card shows Regular, Oblique, Bold and Bold Oblique from left to right (R, O, B, BO). These are actual vector outlines from the released fonts. Scale is consistent except for unusually wide glyphs; cropped source letters are independently enlarged to fit.',
  'Source crops come from the original letter and envelope. Direct exemplar means the same character construction is visible. Case/mark uncertain flags ambiguous evidence rather than treating the transcription as certain.',
  'Related base only shows a relevant unaccented letter, not evidence that the writer used that accented character. Related default form and related full-size digit likewise indicate design relationships, not exact exemplars.',

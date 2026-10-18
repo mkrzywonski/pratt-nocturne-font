@@ -15,7 +15,7 @@ STYLES=['Regular','Oblique','Bold','BoldOblique']
 for s in STYLES:pdfmetrics.registerFont(TTFont(s,str(ROOT/'fonts'/f'PrattNocturne-{s}.ttf')))
 W,H=600,800
 c=canvas.Canvas(str(OUT/'Public-Specimen.pdf'),pagesize=(W,H))
-c.setTitle('Pratt Nocturne — an eccentric hand / version 2.010')
+c.setTitle('Pratt Nocturne — an eccentric hand / version 2.011')
 c.setAuthor('Pratt Nocturne contributors')
 ink='#20262e';paper='#f5efdf';gold='#e1cb80';muted='#68706c'
 def bg(color):
@@ -27,7 +27,7 @@ def line(x1,y1,x2,y2,color):
  c.setStrokeColor(HexColor(color));c.setLineWidth(.5);c.line(x1,y1,x2,y2)
 def end(num,dark=False):
  color=gold if dark else muted
- text(48,30,'PRATT NOCTURNE  /  TYPE SPECIMEN  /  2.010',8,color=color)
+ text(48,30,'PRATT NOCTURNE  /  TYPE SPECIMEN  /  2.011',8,color=color)
  text(542,30,str(num),8,color=color);c.showPage()
 # Fictional book jacket: bold spacing and a restrained nighttime palette.
 bg(ink)
@@ -88,7 +88,7 @@ im=Image.new('RGB',(1600,1000),paper);d=ImageDraw.Draw(im)
 def ui(size):return ImageFont.truetype(UI,size)
 def font(size,s='Regular'):return ImageFont.truetype(str(ROOT/'fonts'/f'PrattNocturne-{s}.ttf'),size)
 d.rectangle((0,0,1600,500),fill=ink)
-d.text((70,38),'AN ECCENTRIC HAND  /  VERSION 2.010',font=ui(22),fill=gold)
+d.text((70,38),'AN ECCENTRIC HAND  /  VERSION 2.011',font=ui(22),fill=gold)
 d.text((62,120),'Pratt Nocturne',font=font(155),fill=paper,anchor='lt')
 d.text((70,385),'Suspended heads. Falling vowels. Unexpected serifs.',font=ui(26),fill=gold)
 for i,s in enumerate(STYLES):

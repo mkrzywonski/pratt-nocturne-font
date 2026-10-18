@@ -1,3 +1,10 @@
+2026-10-18 — Version 2.011
+Adopted K3: short floating stem with a penetrating junction and R-derived
+straight leg. Removed the pale lead-in from the question mark. Adopted AT1:
+tiny T with a continuous encircling tail, without the separate slash, in
+both families. Related K-comma-below and inverted question mark inherit
+the revised drawings.
+
 2026-10-18 — Version 2.010
 Added the approved d-derived readable a and q as named stylistic set ss02,
 with matching accented a, æ and ª. Added a separate Pratt Nocturne Readable
