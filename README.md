@@ -2,7 +2,7 @@
 
 An expressive handwriting-inspired display family with suspended letter heads, descending vowels, boxy curves and deliberately uneven construction.
 
-This font was inspired by the unique handwriting in a letter I received many years ago. I liked the odd style so much that I created this font in order to preserve it. I hope you enjoy Pratt-Nocturne.
+This font was inspired by the unique handwriting in a letter I received many years ago. I liked the odd style so much that I created this font in order to preserve it. I find the lower case A irreconcilable. In addition to the swooping P, the sagging e, and the halfway constructed R, it is the reason I can't get the author's letter forms out of my mind even after so long. I hope you enjoy Pratt-Nocturne.
 
 **Version 2.001 · Regular · Bold · Oblique · Bold Oblique**
 
